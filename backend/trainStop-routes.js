@@ -42,7 +42,20 @@ exports.findStops = function findTrainStops(req, res) {
 		if (err) throw err;
 
 		if (matchingTrainStops) {
-			res.send({ train_stops: matchingTrainStops });
+			var addedTitles = []
+			var result = []
+			for(var i = 0; i < matchingTrainStops.length; i++) {
+				var routeID = matchingTrainStops[i].route_id
+				var insert = {direction: matchingTrainStops[i].direction, arrival: matchingTrainStops[i].arrival}
+				var index = addedTitles.indexOf(routeID)
+				if(index != -1) {
+					result[index].data.push(insert)
+				} else {
+					addedTitles.push(routeID)
+					result.push({title: routeID, data: [insert]})
+				}
+			}
+			res.send({ train_stops: result });
 		} else {
 			res.send({ train_stops: [] });
 		}

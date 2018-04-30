@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, ActivityIndicator, Text, View, TextInput, StyleSheet, ScrollView, Button } from 'react-native';
+import { FlatList, ActivityIndicator, Text, View, TextInput, StyleSheet, ScrollView, Button, SectionList } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
 const server_url = 'http://b535a5e4.ngrok.io'
@@ -60,14 +60,28 @@ class DetailsScreen extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = this.props.navigation.state.params
+        this.state = { 
+            stop_name: this.props.navigation.state.params.stop_name,
+            stop_id: this.props.navigation.state.params.stop_id,
+            isLoading: true,
+            dataSource: [{"title": "R", "data": [{"direction": "S", "arrival": "S"}]}]
+        }
+    }
+
+    millToMin = (mill) => {
+        var millis = mill - (new Date().getTime());
+        var minutes = Math.floor(millis / 60000);
+        var seconds = ((millis % 60000) / 1000).toFixed(0);
+        return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
     }
 
     componentDidMount() {
+        console.log("mounted")
         return fetch(server_url + '/trainstop/' + this.state.stop_id)
         .then((response) => response.json())
         .then((responseJson) => {
             this.setState({
+                isLoading: false,
                 dataSource: responseJson.train_stops,
             }, function() {});
         })
@@ -77,17 +91,27 @@ class DetailsScreen extends React.Component {
     }
 
     render() {
-        console.log(this.state.dataSource)
-        return (
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <Text>Stop Name: {this.state.stop_name}</Text>
-                <Text>Stop ID: {this.state.stop_id}</Text>
-                <FlatList
-                    data={ this.state.dataSource }
-                    renderItem={({item}) => <Text style={styles.item}>{"D: " + item.direction + " R: " + item.route_id + " A: " + new Date(item.arrival)}</Text>}
-                />
-            </View>
-        );
+        if(this.state.isLoading) {
+            return (
+                <View style={{flex: 1, padding: 80}}>
+                    <ActivityIndicator/>
+                </View>
+            )
+        } else {
+            return (
+                <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                    <Text>Stop Name: {this.state.stop_name}</Text>
+                    <Text>Stop ID: {this.state.stop_id}</Text>
+                    <SectionList
+                        sections={ this.state.dataSource }
+                        renderItem={({item}) => <Text style={styles.item}>{"Direction: " + item.direction + " Arriving in: " + this.millToMin(item.arrival)}</Text>}
+                        renderSectionHeader={({section}) => <Text style={styles.sectionHeader}>{section.title + ' Train'}</Text>}
+                        keyExtractor={(item, index) => index}
+                    />
+                </View>
+
+            );
+        }
     }
 }
 
@@ -95,6 +119,15 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         paddingTop: 22
+    },
+    sectionHeader: {
+        paddingTop: 2,
+        paddingLeft: 10,
+        paddingRight: 10,
+        paddingBottom: 2,
+        fontSize: 14,
+        fontWeight: 'bold',
+        backgroundColor: 'rgba(247,247,247,1.0)',
     },
     item: {
         padding: 10,
