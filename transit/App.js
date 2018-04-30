@@ -2,6 +2,8 @@ import React from 'react';
 import { FlatList, ActivityIndicator, Text, View, TextInput, StyleSheet, ScrollView, Button } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
+const server_url = 'http://b535a5e4.ngrok.io'
+
 class HomeScreen extends React.Component {
 
     constructor(props) {
@@ -14,7 +16,7 @@ class HomeScreen extends React.Component {
     }
 
     componentDidMount() {
-        return fetch('http://b535a5e4.ngrok.io/trainstop/name')
+        return fetch(server_url + '/trainstop/name')
         .then((response) => response.json())
         .then((responseJson) => {
         this.setState({
@@ -25,7 +27,6 @@ class HomeScreen extends React.Component {
         .catch((error) => {
             console.error(error);
         });
-
     }
 
     render() {
@@ -48,7 +49,7 @@ class HomeScreen extends React.Component {
                         placeholder="Enter a Subway Stop"
                         onChangeText={(text) => this.updateSelection(text)}
                     />
-                    {arr.map((word, index) => <Matches key={index} word={word} selection={this.state.selection} nav={() => this.props.navigation.navigate('Details')} />)}
+                    {arr.map((word, index) => <Matches key={index} word={word} selection={this.state.selection} nav={() => this.props.navigation.navigate('Details', {stop_name: word, stop_id: this.state.dataSource[word]})} />)}
                 </ScrollView>
             );
         }
@@ -56,14 +57,51 @@ class HomeScreen extends React.Component {
 }
 
 class DetailsScreen extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = this.props.navigation.state.params
+    }
+
+    componentDidMount() {
+        return fetch(server_url + '/trainstop/' + this.state.stop_id)
+        .then((response) => response.json())
+        .then((responseJson) => {
+            this.setState({
+                dataSource: responseJson.train_stops,
+            }, function() {});
+        })
+        .catch((error) => {
+            console.error(error);
+        });
+    }
+
     render() {
+        console.log(this.state.dataSource)
         return (
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <Text>Details Screen</Text>
+                <Text>Stop Name: {this.state.stop_name}</Text>
+                <Text>Stop ID: {this.state.stop_id}</Text>
+                <FlatList
+                    data={ this.state.dataSource }
+                    renderItem={({item}) => <Text style={styles.item}>{"D: " + item.direction + " R: " + item.route_id + " A: " + new Date(item.arrival)}</Text>}
+                />
             </View>
         );
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        paddingTop: 22
+    },
+    item: {
+        padding: 10,
+        fontSize: 18,
+        height: 44,
+    },
+})
 
 const RootStack = StackNavigator(
     {
@@ -85,9 +123,9 @@ class Matches extends React.Component {
         if(pattern.test(this.props.word)) {
             return (
                 <Button
-                    onPress = {this.props.nav}
-                    title = {this.props.word}
-                    color = "#841584"
+                    onPress={this.props.nav}
+                    title={this.props.word}
+                    color="#841584"
                 />
             )
         } else {
