@@ -42,7 +42,7 @@ function updater() {
 
 updater()
 
-var minutes = 1
+var minutes = 100
 the_interval = minutes * 60 * 1000;
 setInterval(function() {
     updater()
