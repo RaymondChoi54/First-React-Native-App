@@ -1,7 +1,8 @@
 import React from 'react';
 import { FlatList, ActivityIndicator, Text, View, TextInput, StyleSheet, ScrollView, Button } from 'react-native';
+import { StackNavigator } from 'react-navigation';
 
-export default class App extends React.Component {
+class HomeScreen extends React.Component {
 
     constructor(props) {
         super(props);
@@ -17,8 +18,8 @@ export default class App extends React.Component {
         .then((response) => response.json())
         .then((responseJson) => {
         this.setState({
-          isLoading: false,
-          dataSource: responseJson,
+            isLoading: false,
+            dataSource: responseJson,
         }, function() {});
         })
         .catch((error) => {
@@ -30,61 +31,74 @@ export default class App extends React.Component {
     render() {
         if(this.state.isLoading) {
             return (
-                <View style={{flex: 1, padding: 50}}>
+                <View style={{flex: 1, padding: 80}}>
                     <ActivityIndicator/>
                 </View>
             )
         } else {
             var arr = [];
             Object.keys(this.state.dataSource).forEach(function(key) {
-                console.log(key)
                 arr.push(key);
             });
 
             return (
-                <ScrollView style={{padding: 50}}>
+                <ScrollView style={{padding: 10}}>
                     <TextInput
                         style={{height: 40}}
                         placeholder="Enter a Subway Stop"
                         onChangeText={(text) => this.updateSelection(text)}
                     />
-                    {arr.map((word) => <Matches word={word} selection={this.state.selection} />)}
+                    {arr.map((word, index) => <Matches key={index} word={word} selection={this.state.selection} nav={() => this.props.navigation.navigate('Details')} />)}
                 </ScrollView>
             );
         }
     }
 }
 
+class DetailsScreen extends React.Component {
+    render() {
+        return (
+            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                <Text>Details Screen</Text>
+            </View>
+        );
+    }
+}
+
+const RootStack = StackNavigator(
+    {
+        Home: {
+            screen: HomeScreen,
+        },
+        Details: {
+            screen: DetailsScreen,
+        },
+    },
+    {
+        initialRouteName: 'Home',
+    }
+);
+
 class Matches extends React.Component {
     render() {
-        const handlePress = () => false
         pattern = new RegExp(this.props.selection, 'i')
         if(pattern.test(this.props.word)) {
             return (
                 <Button
-                    onPress = {handlePress}
+                    onPress = {this.props.nav}
                     title = {this.props.word}
                     color = "#841584"
                 />
             )
         } else {
-            return <View></View>
+            return (null)
         }
     }
 }
 
-//{arr.map(item => <MyAppChild stop_name={item} stop_id={item} />)}
+export default class App extends React.Component {
+    render() {
+        return <RootStack/>;
+    }
+}
 
-// class MyAppChild extends React.Component {
-//     render() {
-//         return <Picker.Item label={this.props.stop_name} value={this.props.stop_id} />;
-//     }
-// }
-
-const styles = StyleSheet.create({
-   text: {
-      fontSize: 30,
-      alignSelf: 'center',
-      color: 'red'
-   }
-})

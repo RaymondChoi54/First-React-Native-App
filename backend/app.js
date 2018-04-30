@@ -27,11 +27,12 @@ function updater() {
                             time = entity.trip_update.stop_time_update[j].arrival.time.low * 1000
                         }
                         req = {body: 
-                            {route_id: entity.trip_update.trip.route_id,
-                             stop_id: entity.trip_update.stop_time_update[j].stop_id.substring(0, 3),
-                             direction: entity.trip_update.stop_time_update[j].stop_id.substring(3, 4),
-                             arrival: time
-                            }}
+                                {
+                                    route_id: entity.trip_update.trip.route_id,
+                                    stop_id: entity.trip_update.stop_time_update[j].stop_id.substring(0, 3),
+                                    direction: entity.trip_update.stop_time_update[j].stop_id.substring(3, 4),
+                                    arrival: time
+                                }}
                         trainStops.addStop(req)
                     }
                 }
