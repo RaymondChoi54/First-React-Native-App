@@ -6,6 +6,7 @@ const GtfsRealtimeBindings = require('gtfs-realtime-bindings');
 const request = require('request');
 
 const feed_ids = [1, 26, 16, 21, 2, 11, 31, 36, 51]
+const lastGoodFeeds = []
 
 function timeCheck(ms) {
     var difference = ms - new Date().getTime();
@@ -23,27 +24,31 @@ function updater() {
             encoding: null
         };
         request(requestSettings, function (error, response, body) {
-            if (!error && response.statusCode == 200) {
-                var feed = GtfsRealtimeBindings.FeedMessage.decode(body);
-                feed.entity.forEach(function(entity) {
-                    if (entity.trip_update) {
-                        for(var j = 0; j < entity.trip_update.stop_time_update.length; j++) {
-                            var time = 0
-                            if(entity.trip_update.stop_time_update[j].arrival && timeCheck(entity.trip_update.stop_time_update[j].arrival.time.low * 1000)) {
-                                time = entity.trip_update.stop_time_update[j].arrival.time.low * 1000
-                            
-                                req = {body: 
-                                        {
-                                            route_id: entity.trip_update.trip.route_id,
-                                            stop_id: entity.trip_update.stop_time_update[j].stop_id.substring(0, 3),
-                                            direction: entity.trip_update.stop_time_update[j].stop_id.substring(3, 4),
-                                            arrival: time
-                                        }}
-                                trainStops.addStop(req)
+            try {
+                if(!error && response.statusCode == 200) {
+                    var feed = GtfsRealtimeBindings.FeedMessage.decode(body);
+                    feed.entity.forEach(function(entity) {
+                        if (entity.trip_update) {
+                            for(var j = 0; j < entity.trip_update.stop_time_update.length; j++) {
+                                var time = 0
+                                if(entity.trip_update.stop_time_update[j].arrival && timeCheck(entity.trip_update.stop_time_update[j].arrival.time.low * 1000)) {
+                                    time = entity.trip_update.stop_time_update[j].arrival.time.low * 1000
+                                
+                                    req = {body: 
+                                            {
+                                                route_id: entity.trip_update.trip.route_id,
+                                                stop_id: entity.trip_update.stop_time_update[j].stop_id.substring(0, 3),
+                                                direction: entity.trip_update.stop_time_update[j].stop_id.substring(3, 4),
+                                                arrival: time
+                                            }}
+                                    trainStops.addStop(req)
+                                }
                             }
                         }
-                    }
-                });
+                    });
+                }
+            } catch(exception) {
+                console.log("Error: Request Error")
             }
         });
     }
@@ -51,7 +56,7 @@ function updater() {
 
 updater();
 
-var minutes = 100
+var minutes = 1
 the_interval = minutes * 60 * 1000;
 setInterval(function() {
     updater()

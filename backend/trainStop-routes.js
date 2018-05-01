@@ -2,7 +2,9 @@ const TrainStop = require('./trainStop');
 
 exports.destroy = function(req, res) {
     TrainStop.remove({}, function(err) {
-        if (err) throw err;
+        if(err) {
+        	console.log("Error: Could not remove all stops")
+        }
     });
 };
 
@@ -19,7 +21,9 @@ exports.findStopNames = function(req, res) {
 exports.addStop = function addTrainStop(req, res) {
 	const newTrainStop = new TrainStop(req.body);
 	newTrainStop.save((err) => {
-		if (err) throw err;
+		if(err) {
+        	console.log("Error: Could not add stop")
+        }
 
 		// res.sendStatus(200);
 	});
@@ -27,7 +31,11 @@ exports.addStop = function addTrainStop(req, res) {
 
 exports.findAll = function allTrainStops(req, res) {
 	TrainStop.find({}, (err, matchingTrainStops) => {
-		if (err) throw err;
+		if(err) {
+        	console.log("Error: Could not find stops")
+        	res.status(400);
+			return res.send('Error: Could not find stops');
+        }
 
 		if (matchingTrainStops) {
 			res.send({ train_stops: matchingTrainStops });
@@ -39,7 +47,11 @@ exports.findAll = function allTrainStops(req, res) {
 
 exports.findStops = function findTrainStops(req, res) {
 	TrainStop.find({stop_id: req.params.id}, (err, matchingTrainStops) => {
-		if (err) throw err;
+		if(err) {
+        	console.log("Error: Could not find stops")
+        	res.status(400);
+			return res.send('Error: Could not find stops');
+        }
 
 		if (matchingTrainStops) {
 			var addedTitles = []

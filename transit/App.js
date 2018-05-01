@@ -177,13 +177,13 @@ class DetailsScreen extends React.Component {
             )
         } else {
             return (
-                <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 10 }}>
+                <ScrollView style={{ flex: 1, padding: 10 }}>
                     <FlatList
                         data={ this.state.dataSource.sort(function(a, b) { return a.title.localeCompare(b.title) }) }
                         renderItem={({item}) => <DirectionLists item={item} />}
                         keyExtractor={(item, index) => 'Outer' + index.toString()}
                     />
-                </View>
+                </ScrollView>
             );
         }
     }
@@ -195,7 +195,8 @@ class DirectionLists extends React.Component {
         super(props);
         this.state = {
             time: new Date().getTime(),
-            intervalSetter: null
+            intervalSetter: null,
+            isMounted: false
         }
     }
 
@@ -213,15 +214,23 @@ class DirectionLists extends React.Component {
 
     componentDidMount() {
         this.setState({
+            isMounted: true
+        })
+        this.setState({
             intervalSetter: setInterval(() => {
-                this.setState({
-                    time : new Date().getTime()
-                })
+                if(this.state.isMounted) {
+                    this.setState({
+                        time : new Date().getTime()
+                    })
+                }
             }, 1000)
         })
     }
 
     componentWillUnmount() {
+        this.setState({
+            isMounted: false
+        })
         clearInterval(this.state.intervalSetter)
     }
 
