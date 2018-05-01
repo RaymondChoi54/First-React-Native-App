@@ -3,12 +3,40 @@ import { FlatList, ActivityIndicator, Text, View, TextInput, StyleSheet, ScrollV
 import { StackNavigator } from 'react-navigation';
 
 const server_url = 'http://b535a5e4.ngrok.io'
+const train_color = {
+    '1': 'red',
+    '2': 'red',
+    '3': 'red',
+    '4': 'green',
+    '5': 'green',
+    '6': 'green',
+    '7': 'purple',
+    'A': 'blue',
+    'C': 'blue',
+    'E': 'blue',
+    'B': 'orange',
+    'D': 'orange',
+    'F': 'orange',
+    'M': 'orange',
+    'G': 'green',
+    'J': 'brown',
+    'Z': 'brown',
+    'L': 'grey',
+    'N': 'yellow',
+    'Q': 'yellow',
+    'R': 'yellow',
+    'W': 'yellow',
+    'S': 'grey'
+}
 
 class HomeScreen extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { isLoading: true, selection: '' }
+        this.state = { 
+            isLoading: true,
+            selection: '' 
+        }
     }
 
     updateSelection = (selection) => {
@@ -89,15 +117,18 @@ class DetailsScreen extends React.Component {
     }
 
     componentDidMount() {
-        console.log("mounted")
         return fetch(server_url + '/trainstop/' + this.state.stop_id)
         .then((response) => {
             return response.json()
         })
         .then((responseJson) => {
+            var temp = responseJson.train_stops
+            for(var i = 0; i < temp.length; i++) {
+                temp[i].data.sort(function(a, b) { return (a.arrival - b.arrival) });
+            }
             this.setState({
                 isLoading: false,
-                dataSource: responseJson.train_stops.sort(),
+                dataSource: temp,
             }, function() {});
         })
         .catch((error) => {
@@ -118,12 +149,48 @@ class DetailsScreen extends React.Component {
                     <SectionList
                         sections={ this.state.dataSource }
                         renderItem={({item}) => <Text style={styles.item}>{"Direction: " + item.direction + this.millToMin(item.arrival)}</Text>}
-                        renderSectionHeader={({section}) => <Text style={styles.sectionHeader}>{section.title + ' Train'}</Text>}
+                        renderSectionHeader={({section}) => <Header title={section.title} />}
+                        // renderSectionHeader={({section}) => <Text style={styles.sectionHeader}>{section.title + ' Train'}</Text>}
                         keyExtractor={(item, index) => index}
                     />
                 </View>
-
             );
+        }
+    }
+}
+
+class Header extends React.Component {
+    trainToColor = (train) => {
+        if(train in train_color) {
+            return train_color[train]
+        } else {
+            return 'blue'
+        }
+    }
+    render() {
+        return (
+            <View>
+                <Text style={styles.sectionHeader}>{this.props.title + ' Train'}</Text>
+                <View style={{flex: 1, height: 2, backgroundColor: this.trainToColor(this.props.title)}} />
+            </View>
+        )
+    }
+}
+
+class Matches extends React.Component {
+    render() {
+        if(this.props.index <= 16) {
+            return (
+                <View style = {{padding: 1.5}}>
+                <Button
+                    onPress={this.props.nav}
+                    title={this.props.word}
+                    color="#841584"
+                />
+                </View>
+            )
+        } else {
+            return (null)
         }
     }
 }
@@ -131,21 +198,21 @@ class DetailsScreen extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingTop: 22
+        paddingTop: 22,
     },
     sectionHeader: {
         paddingTop: 2,
         paddingLeft: 10,
-        paddingRight: 10,
+        paddingRight: 300,
         paddingBottom: 2,
-        fontSize: 14,
+        fontSize: 20,
         fontWeight: 'bold',
         backgroundColor: 'rgba(247,247,247,1.0)',
     },
     item: {
-        padding: 10,
+        padding: 5,
         fontSize: 18,
-        height: 44,
+        height: 30,
     },
 })
 
@@ -165,22 +232,6 @@ const RootStack = StackNavigator(
         initialRouteName: 'Home',
     }
 );
-
-class Matches extends React.Component {
-    render() {
-        if(this.props.index <= 20) {
-            return (
-                <Button
-                    onPress={this.props.nav}
-                    title={this.props.word}
-                    color="#841584"
-                />
-            )
-        } else {
-            return (null)
-        }
-    }
-}
 
 export default class App extends React.Component {
     render() {
