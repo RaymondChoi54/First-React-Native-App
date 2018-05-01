@@ -130,15 +130,16 @@ class DetailsScreen extends React.Component {
 
     updateStopInfo = () => {
         var temp = []
+        var completed = []
         for(var i = 0; i < this.state.stop_ids.length; i++) {
-            let index = i + 1
             fetch(server_url + '/trainstop/' + this.state.stop_ids[i])
             .then((response) => {
                 return response.json()
             })
             .then((responseJson) => {
+                completed.push(i)
                 this.mergeStops(temp, responseJson.train_stops)
-                if(this.state.isMounted && index == this.state.stop_ids.length) {
+                if(this.state.isMounted && completed.length == this.state.stop_ids.length) {
                     this.setState({
                         isLoading: false,
                         dataSource: temp,
@@ -292,7 +293,7 @@ class Header extends React.Component {
         return (
             <View>
                 <Text style={styles.sectionHeader}>{this.props.title + ' Train'}</Text>
-                <View style={{flex: 1, height: 2, backgroundColor: this.trainToColor(this.props.title)}} />
+                <View style={{flex: 1, height: 2, backgroundColor: this.trainToColor(this.props.title.substring(0, 1))}} />
             </View>
         )
     }
