@@ -49,7 +49,7 @@ class HomeScreen extends React.Component {
                         placeholder="Enter a Subway Stop"
                         onChangeText={(text) => this.updateSelection(text)}
                     />
-                    {arr.map((word, index) => <Matches key={index} word={word} selection={this.state.selection} nav={() => this.props.navigation.navigate('Details', {stop_name: word, stop_id: this.state.dataSource[word]})} />)}
+                    {arr.filter(word => new RegExp(this.state.selection, 'i').test(word)).map((word, index) => <Matches key={index} index={index} word={word} selection={this.state.selection} nav={() => this.props.navigation.navigate('Details', {stop_name: word, stop_id: this.state.dataSource[word]})} />)}
                 </ScrollView>
             );
         }
@@ -57,6 +57,14 @@ class HomeScreen extends React.Component {
 }
 
 class DetailsScreen extends React.Component {
+
+    static navigationOptions = ({ navigation }) => {
+        const { params } = navigation.state;
+    
+        return {
+            title: params ? params.stop_name : 'Stop Name?',
+        }
+    };
 
     constructor(props) {
         super(props);
@@ -69,20 +77,27 @@ class DetailsScreen extends React.Component {
     }
 
     millToMin = (mill) => {
+        var text = ' Arriving: '
         var millis = mill - (new Date().getTime());
+        if(Math.sign(millis) < 0) {
+            text = ' Departed: '
+            millis = millis * -1
+        }
         var minutes = Math.floor(millis / 60000);
         var seconds = ((millis % 60000) / 1000).toFixed(0);
-        return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+        return text + minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
     }
 
     componentDidMount() {
         console.log("mounted")
         return fetch(server_url + '/trainstop/' + this.state.stop_id)
-        .then((response) => response.json())
+        .then((response) => {
+            return response.json()
+        })
         .then((responseJson) => {
             this.setState({
                 isLoading: false,
-                dataSource: responseJson.train_stops,
+                dataSource: responseJson.train_stops.sort(),
             }, function() {});
         })
         .catch((error) => {
@@ -99,12 +114,10 @@ class DetailsScreen extends React.Component {
             )
         } else {
             return (
-                <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                    <Text>Stop Name: {this.state.stop_name}</Text>
-                    <Text>Stop ID: {this.state.stop_id}</Text>
+                <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 10 }}>
                     <SectionList
                         sections={ this.state.dataSource }
-                        renderItem={({item}) => <Text style={styles.item}>{"Direction: " + item.direction + " Arriving in: " + this.millToMin(item.arrival)}</Text>}
+                        renderItem={({item}) => <Text style={styles.item}>{"Direction: " + item.direction + this.millToMin(item.arrival)}</Text>}
                         renderSectionHeader={({section}) => <Text style={styles.sectionHeader}>{section.title + ' Train'}</Text>}
                         keyExtractor={(item, index) => index}
                     />
@@ -140,6 +153,9 @@ const RootStack = StackNavigator(
     {
         Home: {
             screen: HomeScreen,
+            navigationOptions: {
+                title: 'Select a Stop'
+            },
         },
         Details: {
             screen: DetailsScreen,
@@ -152,8 +168,7 @@ const RootStack = StackNavigator(
 
 class Matches extends React.Component {
     render() {
-        pattern = new RegExp(this.props.selection, 'i')
-        if(pattern.test(this.props.word)) {
+        if(this.props.index <= 20) {
             return (
                 <Button
                     onPress={this.props.nav}
