@@ -178,9 +178,16 @@ class DetailsScreen extends React.Component {
 
 class DirectionLists extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            time: new Date().getTime()
+        }
+    }
+
     millToMin = (mill) => {
         var text = ' Arriving: '
-        var millis = mill - (new Date().getTime());
+        var millis = mill - this.state.time;
         if(Math.sign(millis) < 0) {
             text = ' Departed: '
             millis = millis * -1
@@ -188,6 +195,20 @@ class DirectionLists extends React.Component {
         var minutes = Math.floor(millis / 60000);
         var seconds = ((millis % 60000) / 1000).toFixed(0);
         return text + minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+    }
+
+    intervalSetter = null
+
+    componentDidMount() {
+        this.intervalSetter = setInterval( () => {
+            this.setState({
+                time : new Date().getTime()
+            })
+        }, 1000)
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.intervalSetter)
     }
 
     render() {
