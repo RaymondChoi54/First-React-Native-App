@@ -27,9 +27,7 @@ function updater() {
                 var feed = GtfsRealtimeBindings.FeedMessage.decode(body);
                 feed.entity.forEach(function(entity) {
                     if (entity.trip_update) {
-                        // console.log(entity.trip_update)
                         for(var j = 0; j < entity.trip_update.stop_time_update.length; j++) {
-                            // console.log(entity.trip_update.stop_time_update[j].arrival)
                             var time = 0
                             if(entity.trip_update.stop_time_update[j].arrival && timeCheck(entity.trip_update.stop_time_update[j].arrival.time.low * 1000)) {
                                 time = entity.trip_update.stop_time_update[j].arrival.time.low * 1000

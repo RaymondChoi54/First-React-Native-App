@@ -18041,8 +18041,15 @@ var obj = [
 var temp = {}
 
 for(var i = 0; i < obj.length; i++) {
-    console.log(obj[i]["stop_id"])
-    temp[obj[i].stop_name] = obj[i]["stop_id"].toString().substring(0, 3)
+    var insert = obj[i]["stop_id"].toString().substring(0, 3)
+    var name = obj[i].stop_name
+    if(name in temp) {
+        if(temp[name].indexOf(insert) == -1) {
+            temp[name].push(insert)
+        }
+    } else {
+        temp[name] = [insert]
+    }
 }
 
 console.log(temp)

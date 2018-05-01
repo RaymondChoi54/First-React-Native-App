@@ -77,7 +77,7 @@ class HomeScreen extends React.Component {
                         placeholder="Enter a Subway Stop"
                         onChangeText={(text) => this.updateSelection(text)}
                     />
-                    {arr.filter(word => new RegExp(this.state.selection, 'i').test(word)).map((word, index) => <Matches key={index} index={index} word={word} selection={this.state.selection} nav={() => this.props.navigation.navigate('Details', {stop_name: word, stop_id: this.state.dataSource[word]})} />)}
+                    {arr.filter(word => new RegExp(this.state.selection, 'i').test(word)).map((word, index) => <Matches key={index} index={index} word={word} selection={this.state.selection} nav={() => this.props.navigation.navigate('Details', {stop_name: word, stop_ids: this.state.dataSource[word]})} />)}
                 </ScrollView>
             );
         }
@@ -98,7 +98,7 @@ class DetailsScreen extends React.Component {
         super(props);
         this.state = { 
             stop_name: this.props.navigation.state.params.stop_name,
-            stop_id: this.props.navigation.state.params.stop_id,
+            stop_ids: this.props.navigation.state.params.stop_ids,
             isLoading: true,
             dataSource: [{"title": "R", "data": [{"direction": "S", "arrival": "S"}]}]
         }
@@ -116,24 +116,55 @@ class DetailsScreen extends React.Component {
         return text + minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
     }
 
-    componentDidMount() {
-        return fetch(server_url + '/trainstop/' + this.state.stop_id)
-        .then((response) => {
-            return response.json()
-        })
-        .then((responseJson) => {
-            var temp = responseJson.train_stops
-            for(var i = 0; i < temp.length; i++) {
-                temp[i].data.sort(function(a, b) { return (a.arrival - b.arrival) });
+    findIndexStop = (a, stop) => {
+        var found = -1;
+        for(var i = 0; i < a.length; i++) {
+            if(a[i].title == stop) {
+                found = i
+                break;
             }
-            this.setState({
-                isLoading: false,
-                dataSource: temp,
-            }, function() {});
-        })
-        .catch((error) => {
-            console.error(error);
-        });
+        }
+        return found
+    }
+
+    mergeStops = (a, b) => {
+        for(var i = 0; i < b.length; i++) {
+            var index = this.findIndexStop(a, b[i].title)
+            if(index > -1) {
+                a[index] = b[i]
+            } else {
+                a.push(b[i])
+            }
+        }
+    }
+
+    componentDidMount() {
+        var temp = []
+        for(var i = 0; i < this.state.stop_ids.length; i++) {
+            fetch(server_url + '/trainstop/' + this.state.stop_ids[i])
+            .then((response) => {
+                return response.json()
+            })
+            .then((responseJson) => {
+                this.mergeStops(temp, responseJson.train_stops)
+                for(var i = 0; i < temp.length; i++) {
+                    temp[i].data.sort(function(a, b) {
+                        if(a.direction != b.direction) {
+                            return a.direction.localeCompare(b.direction)
+                        }
+                        return (a.arrival - b.arrival) 
+                    });
+                }
+                this.setState({
+                    isLoading: false,
+                    dataSource: temp,
+                }, function() {});
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+        }
+        return null
     }
 
     render() {
@@ -150,7 +181,6 @@ class DetailsScreen extends React.Component {
                         sections={ this.state.dataSource }
                         renderItem={({item}) => <Text style={styles.item}>{"Direction: " + item.direction + this.millToMin(item.arrival)}</Text>}
                         renderSectionHeader={({section}) => <Header title={section.title} />}
-                        // renderSectionHeader={({section}) => <Text style={styles.sectionHeader}>{section.title + ' Train'}</Text>}
                         keyExtractor={(item, index) => index}
                     />
                 </View>
