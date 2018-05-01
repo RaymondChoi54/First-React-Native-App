@@ -200,7 +200,7 @@ class DirectionLists extends React.Component {
     intervalSetter = null
 
     componentDidMount() {
-        this.intervalSetter = setInterval( () => {
+        this.intervalSetter = setInterval(() => {
             this.setState({
                 time : new Date().getTime()
             })
@@ -314,7 +314,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(247,247,247,1.0)',
         marginBottom: 7,
         padding: 5,
-        borderBottomWidth: 1,
+        borderBottomWidth: 2,
         borderColor: 'black',
     },
     direction: {
