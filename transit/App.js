@@ -99,7 +99,20 @@ class HomeScreen extends React.Component {
                 this.setState({
                     savedStops: result
                 })
-            })   
+            })
+            if(this.state.savedStops.length == 0) {
+                return (
+                    <ScrollView style={{padding: 10}}>
+                    <TextInput
+                        style={{height: 40}}
+                        placeholder="Enter a Subway Stop"
+                        onChangeText={(text) => this.updateSelection(text)}
+                    />
+                    <Text>{"You can search for stops using the text input above. It will display matching train stops. The schedule for each stop can be seen by pressing the stop. Stops can be saved and displayed on the home screen by pressing the top right button. They can also be removed in the same way."}</Text>
+                    </ScrollView>
+
+                )
+            }
             return (
                 <ScrollView style={{padding: 10}}>
                     <TextInput
@@ -140,7 +153,6 @@ class RightHeader extends React.Component {
                     } else {
                         return callback([])
                     }
-
                 });
             } catch (error) {
                 Alert.alert(
@@ -160,8 +172,12 @@ class RightHeader extends React.Component {
         saveStop = async () => {
             getSaved(async (savedRoutes) => {
                 try {
-                    if(savedRoutes.indexOf(this.props.title) == -1) {
+                    var index = savedRoutes.indexOf(this.props.title)
+                    if(index == -1) {
                         savedRoutes.push(this.props.title)
+                        await AsyncStorage.setItem('savedRoutes', JSON.stringify(savedRoutes));
+                    } else {
+                        savedRoutes.splice(index, 1)
                         await AsyncStorage.setItem('savedRoutes', JSON.stringify(savedRoutes));
                     }
                 } catch (error) {
