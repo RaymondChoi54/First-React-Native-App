@@ -100,7 +100,9 @@ class DetailsScreen extends React.Component {
             stop_name: this.props.navigation.state.params.stop_name,
             stop_ids: this.props.navigation.state.params.stop_ids,
             isLoading: true,
-            dataSource: [{"title": "R", "data": [{"direction": "S", "arrival": "S"}]}]
+            dataSource: [{"title": "R", "data": [{"direction": "S", "arrival": "S"}]}],
+            intervalSetter: null,
+            isMounted: false
         }
     }
 
@@ -126,7 +128,7 @@ class DetailsScreen extends React.Component {
         }
     }
 
-    componentDidMount() {
+    updateStopInfo = () => {
         var temp = []
         for(var i = 0; i < this.state.stop_ids.length; i++) {
             fetch(server_url + '/trainstop/' + this.state.stop_ids[i])
@@ -135,24 +137,35 @@ class DetailsScreen extends React.Component {
             })
             .then((responseJson) => {
                 this.mergeStops(temp, responseJson.train_stops)
-                for(var i = 0; i < temp.length; i++) {
-                    temp[i].data.sort(function(a, b) {
-                        if(a.direction != b.direction) {
-                            return a.direction.localeCompare(b.direction)
-                        }
-                        return (a.arrival - b.arrival) 
-                    });
+                if(this.state.isMounted) {
+                    this.setState({
+                        isLoading: false,
+                        dataSource: temp,
+                    }, function() {});
                 }
-                this.setState({
-                    isLoading: false,
-                    dataSource: temp,
-                }, function() {});
             })
             .catch((error) => {
                 console.error(error);
             });
         }
         return null
+    }
+
+    componentWillUnmount() {
+        this.setState({
+            isMounted: false
+        })
+        clearInterval(this.state.intervalSetter)
+    }
+
+    componentDidMount() {
+        this.setState({
+            isMounted: true,
+            intervalSetter: setInterval(() => {
+                this.updateStopInfo()
+            }, 60000)
+        })
+        this.updateStopInfo()
     }
 
     render() {
@@ -166,7 +179,7 @@ class DetailsScreen extends React.Component {
             return (
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 10 }}>
                     <FlatList
-                        data={ this.state.dataSource }
+                        data={ this.state.dataSource.sort(function(a, b) { return a.title.localeCompare(b.title) }) }
                         renderItem={({item}) => <DirectionLists item={item} />}
                         keyExtractor={(item, index) => 'Outer' + index.toString()}
                     />
@@ -181,7 +194,8 @@ class DirectionLists extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            time: new Date().getTime()
+            time: new Date().getTime(),
+            intervalSetter: null
         }
     }
 
@@ -197,18 +211,18 @@ class DirectionLists extends React.Component {
         return text + minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
     }
 
-    intervalSetter = null
-
     componentDidMount() {
-        this.intervalSetter = setInterval(() => {
-            this.setState({
-                time : new Date().getTime()
-            })
-        }, 1000)
+        this.setState({
+            intervalSetter: setInterval(() => {
+                this.setState({
+                    time : new Date().getTime()
+                })
+            }, 1000)
+        })
     }
 
     componentWillUnmount() {
-        clearInterval(this.intervalSetter)
+        clearInterval(this.state.intervalSetter)
     }
 
     render() {
@@ -221,6 +235,8 @@ class DirectionLists extends React.Component {
             } else {
                 uptown.push(data)
             }
+            uptown.sort(function(a, b) { return (a.arrival - b.arrival) });
+            downtown.sort(function(a, b) { return (a.arrival - b.arrival) });
         }
         return (
             <View style={{flex: 1}}>
