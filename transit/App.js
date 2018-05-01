@@ -131,13 +131,14 @@ class DetailsScreen extends React.Component {
     updateStopInfo = () => {
         var temp = []
         for(var i = 0; i < this.state.stop_ids.length; i++) {
+            let index = i + 1
             fetch(server_url + '/trainstop/' + this.state.stop_ids[i])
             .then((response) => {
                 return response.json()
             })
             .then((responseJson) => {
                 this.mergeStops(temp, responseJson.train_stops)
-                if(this.state.isMounted) {
+                if(this.state.isMounted && index == this.state.stop_ids.length) {
                     this.setState({
                         isLoading: false,
                         dataSource: temp,

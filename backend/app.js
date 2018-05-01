@@ -17,16 +17,13 @@ function feedToStops(feed) {
     feed.entity.forEach(function(entity) {
         if(entity.trip_update) {
             for(var j = 0; j < entity.trip_update.stop_time_update.length; j++) {
-                var time = 0
                 if(entity.trip_update.stop_time_update[j].arrival && timeCheck(entity.trip_update.stop_time_update[j].arrival.time.low * 1000)) {
-                    time = entity.trip_update.stop_time_update[j].arrival.time.low * 1000
-                
                     req = {body: 
                             {
                                 route_id: entity.trip_update.trip.route_id,
                                 stop_id: entity.trip_update.stop_time_update[j].stop_id.substring(0, 3),
                                 direction: entity.trip_update.stop_time_update[j].stop_id.substring(3, 4),
-                                arrival: time
+                                arrival: entity.trip_update.stop_time_update[j].arrival.time.low * 1000
                             }}
                     trainStops.addStop(req)
                 }
@@ -62,7 +59,7 @@ function updater() {
 
 updater();
 
-var minutes = 0.1
+var minutes = 1
 the_interval = minutes * 60 * 1000;
 setInterval(function() {
     updater()
