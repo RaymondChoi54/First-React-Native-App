@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, ActivityIndicator, Text, View, TextInput, StyleSheet, ScrollView, Button, SectionList } from 'react-native';
+import { FlatList, ActivityIndicator, Text, View, TextInput, StyleSheet, ScrollView, Button, SectionList, Alert, AsyncStorage } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
 const server_url = 'http://b535a5e4.ngrok.io'
@@ -43,14 +43,44 @@ class HomeScreen extends React.Component {
         this.setState({selection: selection})
     }
 
+    getSaved = async (callback) => {
+        try {
+            await AsyncStorage.getItem('savedRoutes', (error, result) => {
+                if(result !== null) {
+                    return callback(JSON.parse(result))
+                } else {
+                    return callback([])
+                }
+
+            });
+        } catch (error) {
+            Alert.alert(
+                'Error loading saved data',
+                'Please try again',
+                [
+                    {text: 'OK', onPress: () => console.log(error)},
+                ],
+                { 
+                    cancelable: false 
+                }
+            )
+            return callback([])
+        }
+    }
+
     componentDidMount() {
+        this.getSaved((result) => {
+            this.setState({
+                savedStops: result
+            })
+        })
         return fetch(server_url + '/trainstop/name')
         .then((response) => response.json())
         .then((responseJson) => {
-        this.setState({
-            isLoading: false,
-            dataSource: responseJson,
-        }, function() {});
+            this.setState({
+                isLoading: false,
+                dataSource: responseJson,
+            });
         })
         .catch((error) => {
             console.error(error);
@@ -63,6 +93,22 @@ class HomeScreen extends React.Component {
                 <View style={{flex: 1, padding: 80}}>
                     <ActivityIndicator/>
                 </View>
+            )
+        } else if(this.state.selection == '') {
+            this.getSaved((result) => {
+                this.setState({
+                    savedStops: result
+                })
+            })   
+            return (
+                <ScrollView style={{padding: 10}}>
+                    <TextInput
+                        style={{height: 40}}
+                        placeholder="Enter a Subway Stop"
+                        onChangeText={(text) => this.updateSelection(text)}
+                    />
+                    {this.state.savedStops.map((word, index) => <Button key={index} title={word} onPress={() => this.props.navigation.navigate('Details', {stop_name: word, stop_ids: this.state.dataSource[word]})}/>)}
+                </ScrollView>
             )
         } else {
             var arr = [];
@@ -84,15 +130,64 @@ class HomeScreen extends React.Component {
     }
 }
 
-class DetailsScreen extends React.Component {
+class RightHeader extends React.Component {
+    render() {
+        getSaved = async (callback) => {
+            try {
+                await AsyncStorage.getItem('savedRoutes', (error, result) => {
+                    if(result !== null) {
+                        return callback(JSON.parse(result))
+                    } else {
+                        return callback([])
+                    }
 
-    static navigationOptions = ({ navigation }) => {
-        const { params } = navigation.state;
-    
-        return {
-            title: params ? params.stop_name : 'Stop Name?',
+                });
+            } catch (error) {
+                Alert.alert(
+                    'Error loading saved data',
+                    'Please try again',
+                    [
+                        {text: 'OK', onPress: () => console.log(error)},
+                    ],
+                    { 
+                        cancelable: false 
+                    }
+                )
+                return callback([])
+            }
         }
-    };
+
+        saveStop = async () => {
+            getSaved(async (savedRoutes) => {
+                try {
+                    if(savedRoutes.indexOf(this.props.title) == -1) {
+                        savedRoutes.push(this.props.title)
+                        await AsyncStorage.setItem('savedRoutes', JSON.stringify(savedRoutes));
+                    }
+                } catch (error) {
+                    Alert.alert(
+                        'Error saving',
+                        'Please try again',
+                        [
+                            {text: 'OK', onPress: () => console.log(error)},
+                        ],
+                        { 
+                            cancelable: false 
+                        }
+                    )
+                }
+
+            })
+        }
+        return (
+            <View style={{ width: 35, marginRight: 12 }}>
+                <Button title={"+"} onPress={saveStop}></Button>
+            </View>
+        )
+    }
+}
+
+class DetailsScreen extends React.Component {
 
     constructor(props) {
         super(props);
@@ -103,6 +198,14 @@ class DetailsScreen extends React.Component {
             dataSource: [{"title": "R", "data": [{"direction": "S", "arrival": "S"}]}],
             intervalSetter: null,
             isMounted: false
+        }
+    }
+
+    static navigationOptions = ({ navigation }) => {
+        const { params } = navigation.state
+        return {
+            title: params ? params.stop_name : 'Loading',
+            headerRight: <RightHeader title={params ? params.stop_name : 'Loading'}/>,
         }
     }
 
