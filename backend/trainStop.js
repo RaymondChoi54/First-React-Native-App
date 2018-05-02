@@ -22,7 +22,8 @@ const trainStopSchema = new Schema({
     collection: 'TrainStops',
 });
 
-mongoose.connect('mongodb://localhost/trainstopsdb', (error) => {
+//Local db: mongodb://localhost/trainstopsdb
+mongoose.connect('mongodb://123:123@ds263759.mlab.com:63759/mtatraintrack', (error) => {
     if (error) console.log(error);
     console.log('Database connection successful');
 });
