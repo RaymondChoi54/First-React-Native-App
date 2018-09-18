@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/res/merged/debug/layout-v26/abc_screen_toolbar.xml",
+        "source": "/Users/RaymondChoi/.android/build-cache/411fcf5caa3a8999a0f323582ee86d7a312068bd/output/res/layout-v26/abc_screen_toolbar.xml"
+    },
+    {
         "merged": "/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/res/merged/debug/layout-v26/abc_screen_toolbar.xml",
         "source": "/Users/RaymondChoi/.android/build-cache/411fcf5caa3a8999a0f323582ee86d7a312068bd/output/res/layout-v26/abc_screen_toolbar.xml"
     }

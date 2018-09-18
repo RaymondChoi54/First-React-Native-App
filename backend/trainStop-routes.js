@@ -1,7 +1,15 @@
 const TrainStop = require('./trainStop');
 
-exports.destroy = function(req, res) {
+exports.destroy = function() {
     TrainStop.remove({}, function(err) {
+        if(err) {
+        	console.log("Error: Could not remove all stops")
+        }
+    });
+};
+
+exports.destroyFeedID = function(feed_id) {
+    TrainStop.remove({feed_id: feed_id}, function(err) {
         if(err) {
         	console.log("Error: Could not remove all stops")
         }

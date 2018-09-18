@@ -18,6 +18,10 @@ const trainStopSchema = new Schema({
         type: Number,
         required: true,
     },
+    feed_id: {
+        type: Number,
+        required: true,
+    },
 }, {
     collection: 'TrainStops',
 });

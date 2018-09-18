@@ -4,7 +4,15 @@
         "source": "/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     },
     {
+        "merged": "/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_launcher.png",
+        "source": "/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
         "merged": "/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_launcher_round.png",
         "source": "/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_launcher_round.png",
+        "source": "/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
     }
 ]

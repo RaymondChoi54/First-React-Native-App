@@ -2,5 +2,9 @@
     {
         "merged": "/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/res/merged/debug/drawable-xhdpi/node_modules_reactnavigationstack_dist_views_assets_backicon.png",
         "source": "/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/src/main/res/drawable-xhdpi/node_modules_reactnavigationstack_dist_views_assets_backicon.png"
+    },
+    {
+        "merged": "/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/res/merged/debug/drawable-xhdpi/node_modules_reactnavigationstack_dist_views_assets_backicon.png",
+        "source": "/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/src/main/res/drawable-xhdpi/node_modules_reactnavigationstack_dist_views_assets_backicon.png"
     }
 ]
