@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/.android/build-cache/81d7ff8ff66dab4e44be9f24cee6a1d9555ad934/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="2442771a5590dd4eb4bce00c2e9dca9e22e4c963">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_09d267db356606dfc483512a5d634e19ab0b87ac/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/.android/build-cache/398cc4a811501ff8bb03d5b9bca5045bec80f847/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5cdb0d01f68a85aa51d14ff0236eadd93c2ae2bc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/.android/build-cache/342055cedd17dc0e9195f680526a1a3a60657d40/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="9803a14716e9f462afb5742811f3456c39f3be3a">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_edd377c78e59d73cdf55b380903c841504ee944b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/.android/build-cache/9308fd18c5185583bfa4e615c78fd971f2a24df3/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="6f4138a4e065826cb044d49faea4cfd7191773d1">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_3495bb4154c76f71e316aaefa78235eccb8c7db3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/javax.inject-1_b3342ecd5781f1c68e416abd8bcfffa71f8439b8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/.android/build-cache/d570a1b42ae3be23e8f9842595a31588f17f0e86/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="da59c80e4a1c8df62d2b4188ef3efddab8afa236">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_08cb6a6a33d7c2d2af1bf34990fa6763afa600b8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/.gradle/caches/modules-2/files-2.1/android.arch.lifecycle/common/1.0.0/e414a4cb28434e25c4f6aa71426eb20cf4874ae9/common-1.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="e414a4cb28434e25c4f6aa71426eb20cf4874ae9">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/common-1.0.0_424dcb3cba665c4284293d9a06350d19755ffda0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/.android/build-cache/3bbe0e07fbbc0cf7a46cd4104e370fa961c95990/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="508f50705b4fde51a16259f29c854201a3044516">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_bc904d462aa699b2c6aa32d4683bd2c05db2e390/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/RaymondChoi/.android/build-cache/13633d7c8d6731eb0ca0308628a48464ca7596bf/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="1c9837ec75b2273699379c2ba0ae63d669b4f08c">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/pre-dexed/debug/classes_46aa1e03b01edf1ae9cc48cc5e1861b982c93360.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/.android/build-cache/22f388599cc4d7396497040242c99b9743b2a50d/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="40392f30a601db5675cdf18192aab013d6fee6ec">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_64f61668b403cd72786d19f5e5e98722e7b97062/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.14.0/102d7be47241d781ef95f1581d414b0943053130/okio-1.14.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="102d7be47241d781ef95f1581d414b0943053130">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.14.0_f4c0dd423495e1f7e52e5e7e699299802ffb614d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/.android/build-cache/733787b0009331b3b4b0110577fe63da430f3b65/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="f97cf85b0fe70d37a705111dafa6b1b418ea1650">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5a71ef942457190fd76af815f9268fa5889f86e4/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/RaymondChoi/.android/build-cache/0ed4cdaa80dca0c86017375d64ceb26dccddbbbe/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/pre-dexed/debug/classes_8b7f8935423a688642d3819d266ba1e7f19f7c24.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/.android/build-cache/b9a1c57a3c69356fecb3f106051d99a3421bfc6a/output/jars/libs/infer-annotations-4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/infer-annotations-4.0_3955cba32abf55204923912dc587247bd53f214c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/.android/build-cache/c0c8a458e470127d190111e043db7fab74a2e3a3/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="87382214d92be4e3c931cb6aa7aa4e827bc179b7">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c0687f09c83770834b8d7e0d1a23d1a406c65aca/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/.android/build-cache/859e9c224a63ee2b49dfc2e4ec343e76d14e4fc4/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="ae15c560bc6685007440d8a70686f8348bafd791">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_7176fcd4fc3fa20b3741fcf1f2c8686c002c5de7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.10.0/7ef0f1d95bf4c0b3ba30bbae25e0e562b05cf75e/okhttp-3.10.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="7ef0f1d95bf4c0b3ba30bbae25e0e562b05cf75e">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/okhttp-3.10.0_9cf20480ef1df23199208b3f52c6c4f1fc3aa805/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/RaymondChoi/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/pre-dexed/debug/jsr305-3.0.0_12ad485f44a14f9fdb5724ae4bb18e2165e6437b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/RaymondChoi/.android/build-cache/c5d74ba6c8ab1c59c2b6db801cf998c89ceceb88/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="dc6c0959ecc7b21932675183573b2bcecf2687b9">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/pre-dexed/debug/classes_05a65763cfb525fdbba099734fefe9ce58361fad.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/RaymondChoi/.gradle/caches/modules-2/files-2.1/com.facebook.fbui.textlayoutbuilder/staticlayout-proxy/1.0/f162442a19fff13995fbd51ba414d9ee05579080/staticlayout-proxy-1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/pre-dexed/debug/staticlayout-proxy-1.0_689e972263de16c3b8db21d8db5fc51202b078b4.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/.gradle/caches/modules-2/files-2.1/android.arch.core/common/1.0.0/a2d487452376193fc8c103dd2b9bd5f2b1b44563/common-1.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="a2d487452376193fc8c103dd2b9bd5f2b1b44563">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/common-1.0.0_d2f96b0f195eaae467111fe8762b48b50c267326/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/RaymondChoi/.android/build-cache/c33c6a0d6c829900f518f2f3beb6b181571c4bc4/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="233f60a165ae622c8b36731502ebbda0f65e1930">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/pre-dexed/debug/classes_adb4025075767e9cfc6fac2593e77fc8e45a7568.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/RaymondChoi/.android/build-cache/d6e36ef053a54b86566d4c712b6c959983716cf9/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="b62fdc4cfef174c1e456014195c83fa7de7dc041">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/pre-dexed/debug/classes_ebba567daa0111d37d47ce13412aa97e66e32d45.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/26.1.0/814258103cf26a15fcc26ecce35f5b7d24b73f8/support-annotations-26.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="0814258103cf26a15fcc26ecce35f5b7d24b73f8">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-26.1.0_1c7fc6bc8d41064c653eec89a73741a4c41bc4a4/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/RaymondChoi/.android/build-cache/9257b12749c3c22d8df7a91fd22fb03fa82ec233/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="7efef32744ca4a436492d5cf28c08698cc2af256">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/pre-dexed/debug/classes_24f41f6205bea42daee15bf5998a0bcbbadb8396.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/bolts-tasks-1.4.0_b7d4be728729973a614661b63424a7aa94fa6962/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/.android/build-cache/b9a1c57a3c69356fecb3f106051d99a3421bfc6a/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="e7a850c25a7efbd533c496ab482c980fdafac58d">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_0411507f59f11c70b5e5433746d59cf1c60a4a7f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/.android/build-cache/411fcf5caa3a8999a0f323582ee86d7a312068bd/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="f428e2fbc9ed0b297e3a3f420e51e6982f66822d">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1c619ceee9cbd97cf1bbbe2eb5b4b8c5456d1fe5/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/RaymondChoi/.android/build-cache/342055cedd17dc0e9195f680526a1a3a60657d40/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="9803a14716e9f462afb5742811f3456c39f3be3a">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/pre-dexed/debug/classes_edd377c78e59d73cdf55b380903c841504ee944b.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/.android/build-cache/5697fa8912b32c81dae4c9acaf4681f42c5b118f/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="f80a752d1333efd4fb9b87da63e73909acb151af">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_0303725f441fe61b8df094aec3bfe839312d072f/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/RaymondChoi/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/pre-dexed/debug/javax.inject-1_b3342ecd5781f1c68e416abd8bcfffa71f8439b8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/RaymondChoi/.gradle/caches/modules-2/files-2.1/android.arch.lifecycle/common/1.0.0/e414a4cb28434e25c4f6aa71426eb20cf4874ae9/common-1.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="e414a4cb28434e25c4f6aa71426eb20cf4874ae9">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/pre-dexed/debug/common-1.0.0_424dcb3cba665c4284293d9a06350d19755ffda0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/RaymondChoi/.android/build-cache/3bbe0e07fbbc0cf7a46cd4104e370fa961c95990/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="508f50705b4fde51a16259f29c854201a3044516">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/pre-dexed/debug/classes_bc904d462aa699b2c6aa32d4683bd2c05db2e390.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/RaymondChoi/.android/build-cache/398cc4a811501ff8bb03d5b9bca5045bec80f847/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/pre-dexed/debug/classes_5cdb0d01f68a85aa51d14ff0236eadd93c2ae2bc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/RaymondChoi/.android/build-cache/d570a1b42ae3be23e8f9842595a31588f17f0e86/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="da59c80e4a1c8df62d2b4188ef3efddab8afa236">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/pre-dexed/debug/classes_08cb6a6a33d7c2d2af1bf34990fa6763afa600b8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/RaymondChoi/.android/build-cache/81d7ff8ff66dab4e44be9f24cee6a1d9555ad934/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="2442771a5590dd4eb4bce00c2e9dca9e22e4c963">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/pre-dexed/debug/classes_09d267db356606dfc483512a5d634e19ab0b87ac.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_d8080dfe39d7146a98a0415017b94307a4237964/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/.android/build-cache/13633d7c8d6731eb0ca0308628a48464ca7596bf/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="1c9837ec75b2273699379c2ba0ae63d669b4f08c">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_46aa1e03b01edf1ae9cc48cc5e1861b982c93360/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/.android/build-cache/0ed4cdaa80dca0c86017375d64ceb26dccddbbbe/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_8b7f8935423a688642d3819d266ba1e7f19f7c24/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/RaymondChoi/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.14.0/102d7be47241d781ef95f1581d414b0943053130/okio-1.14.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="102d7be47241d781ef95f1581d414b0943053130">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/pre-dexed/debug/okio-1.14.0_f4c0dd423495e1f7e52e5e7e699299802ffb614d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/RaymondChoi/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.10.0/ec614c05825ddd2267677a99f585d3913474b125/okhttp-urlconnection-3.10.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="ec614c05825ddd2267677a99f585d3913474b125">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.10.0_9def8458d3d8bb14dbda841cd683f3d80cc3debc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/RaymondChoi/.android/build-cache/22f388599cc4d7396497040242c99b9743b2a50d/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="40392f30a601db5675cdf18192aab013d6fee6ec">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/pre-dexed/debug/classes_64f61668b403cd72786d19f5e5e98722e7b97062.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/RaymondChoi/.android/build-cache/733787b0009331b3b4b0110577fe63da430f3b65/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="f97cf85b0fe70d37a705111dafa6b1b418ea1650">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/pre-dexed/debug/classes_5a71ef942457190fd76af815f9268fa5889f86e4.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="51c9d7210803a79229c2272ad443cc19ba109e55">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_d58feb8961431723eba012508aa7991a47f05954/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/RaymondChoi/.android/build-cache/c0c8a458e470127d190111e043db7fab74a2e3a3/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="87382214d92be4e3c931cb6aa7aa4e827bc179b7">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/pre-dexed/debug/classes_c0687f09c83770834b8d7e0d1a23d1a406c65aca.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/RaymondChoi/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.10.0/7ef0f1d95bf4c0b3ba30bbae25e0e562b05cf75e/okhttp-3.10.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="7ef0f1d95bf4c0b3ba30bbae25e0e562b05cf75e">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/pre-dexed/debug/okhttp-3.10.0_9cf20480ef1df23199208b3f52c6c4f1fc3aa805.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/RaymondChoi/.android/build-cache/b9a1c57a3c69356fecb3f106051d99a3421bfc6a/output/jars/libs/infer-annotations-4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/pre-dexed/debug/infer-annotations-4.0_3955cba32abf55204923912dc587247bd53f214c.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/jsr305-3.0.0_12ad485f44a14f9fdb5724ae4bb18e2165e6437b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.10.0/ec614c05825ddd2267677a99f585d3913474b125/okhttp-urlconnection-3.10.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="ec614c05825ddd2267677a99f585d3913474b125">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/okhttp-urlconnection-3.10.0_9def8458d3d8bb14dbda841cd683f3d80cc3debc/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/RaymondChoi/.gradle/caches/modules-2/files-2.1/android.arch.core/common/1.0.0/a2d487452376193fc8c103dd2b9bd5f2b1b44563/common-1.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="a2d487452376193fc8c103dd2b9bd5f2b1b44563">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/pre-dexed/debug/common-1.0.0_d2f96b0f195eaae467111fe8762b48b50c267326.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/RaymondChoi/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/26.1.0/814258103cf26a15fcc26ecce35f5b7d24b73f8/support-annotations-26.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="0814258103cf26a15fcc26ecce35f5b7d24b73f8">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/pre-dexed/debug/support-annotations-26.1.0_1c7fc6bc8d41064c653eec89a73741a4c41bc4a4.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/.android/build-cache/c5d74ba6c8ab1c59c2b6db801cf998c89ceceb88/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="dc6c0959ecc7b21932675183573b2bcecf2687b9">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_05a65763cfb525fdbba099734fefe9ce58361fad/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/RaymondChoi/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_b7d4be728729973a614661b63424a7aa94fa6962.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/.android/build-cache/c33c6a0d6c829900f518f2f3beb6b181571c4bc4/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="233f60a165ae622c8b36731502ebbda0f65e1930">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_adb4025075767e9cfc6fac2593e77fc8e45a7568/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/RaymondChoi/.android/build-cache/5697fa8912b32c81dae4c9acaf4681f42c5b118f/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="f80a752d1333efd4fb9b87da63e73909acb151af">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/pre-dexed/debug/classes_0303725f441fe61b8df094aec3bfe839312d072f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/RaymondChoi/.android/build-cache/859e9c224a63ee2b49dfc2e4ec343e76d14e4fc4/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="ae15c560bc6685007440d8a70686f8348bafd791">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/pre-dexed/debug/classes_7176fcd4fc3fa20b3741fcf1f2c8686c002c5de7.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/.android/build-cache/9257b12749c3c22d8df7a91fd22fb03fa82ec233/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="7efef32744ca4a436492d5cf28c08698cc2af256">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_24f41f6205bea42daee15bf5998a0bcbbadb8396/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/RaymondChoi/.android/build-cache/9308fd18c5185583bfa4e615c78fd971f2a24df3/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="6f4138a4e065826cb044d49faea4cfd7191773d1">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/pre-dexed/debug/classes_3495bb4154c76f71e316aaefa78235eccb8c7db3.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/.gradle/caches/modules-2/files-2.1/com.facebook.fbui.textlayoutbuilder/staticlayout-proxy/1.0/f162442a19fff13995fbd51ba414d9ee05579080/staticlayout-proxy-1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/staticlayout-proxy-1.0_689e972263de16c3b8db21d8db5fc51202b078b4/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/RaymondChoi/.android/build-cache/411fcf5caa3a8999a0f323582ee86d7a312068bd/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="f428e2fbc9ed0b297e3a3f420e51e6982f66822d">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/pre-dexed/debug/classes_1c619ceee9cbd97cf1bbbe2eb5b4b8c5456d1fe5.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/.android/build-cache/d6e36ef053a54b86566d4c712b6c959983716cf9/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="b62fdc4cfef174c1e456014195c83fa7de7dc041">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_ebba567daa0111d37d47ce13412aa97e66e32d45/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/RaymondChoi/.android/build-cache/b9a1c57a3c69356fecb3f106051d99a3421bfc6a/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="e7a850c25a7efbd533c496ab482c980fdafac58d">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/pre-dexed/debug/classes_0411507f59f11c70b5e5433746d59cf1c60a4a7f.jar" />
+    </item>
+
+</items>

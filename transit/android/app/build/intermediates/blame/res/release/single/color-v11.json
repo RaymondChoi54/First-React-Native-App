@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/res/merged/release/color-v11/abc_background_cache_hint_selector_material_dark.xml",
+        "source": "/Users/RaymondChoi/.android/build-cache/411fcf5caa3a8999a0f323582ee86d7a312068bd/output/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
+        "merged": "/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/res/merged/release/color-v11/abc_background_cache_hint_selector_material_light.xml",
+        "source": "/Users/RaymondChoi/.android/build-cache/411fcf5caa3a8999a0f323582ee86d7a312068bd/output/res/color-v11/abc_background_cache_hint_selector_material_light.xml"
+    }
+]

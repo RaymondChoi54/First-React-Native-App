@@ -1,8 +1,17 @@
 import React from 'react';
-import { FlatList, ActivityIndicator, Text, View, TextInput, StyleSheet, ScrollView, Button, SectionList, Alert, AsyncStorage } from 'react-native';
+import { FlatList, ActivityIndicator, Text, View, TextInput, StyleSheet, ScrollView, Button, SectionList, Alert, AsyncStorage, AppRegistry, TouchableHighlight, Dimensions } from 'react-native';
 import { StackNavigator } from 'react-navigation';
+import HTML from 'react-native-render-html';
+import { YellowBox } from 'react-native';
+YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader']);
 
-const server_url = 'http://b535a5e4.ngrok.io'
+var parseString = require('react-native-xml2js').parseString;
+
+AppRegistry.registerComponent('AwesomeTime3', () => App) 
+
+// Local server: 'http://b535a5e4.ngrok.io'
+const server_url = 'https://sleepy-meadow-98040.herokuapp.com'
+const mta_service_url = 'http://web.mta.info/status/serviceStatus.txt'
 const train_color = {
     '1': 'red',
     '2': 'red',
@@ -28,7 +37,9 @@ const train_color = {
     'W': 'yellow',
     'S': 'grey'
 }
+const instructions = "You can search for stops using the text input. It will display matching train stops. The schedule for each stop can be seen by pressing the stop. Stops can be saved and displayed on the home screen by pressing the top right button. They can also be removed in the same way."
 
+// Homescreen
 class HomeScreen extends React.Component {
 
     constructor(props) {
@@ -36,6 +47,15 @@ class HomeScreen extends React.Component {
         this.state = { 
             isLoading: true,
             selection: '' 
+        }
+    }
+
+    static navigationOptions = ({ navigation }) => {
+        const { params } = navigation.state
+        return {
+            title: params ? params.stop_name : 'Loading',
+            headerLeft: <Button onPress={() => navigation.navigate('Service')} title="Service"/>,
+            headerRight: <Button onPress={() => navigation.navigate('Settings')} title="Settings"/>
         }
     }
 
@@ -103,14 +123,13 @@ class HomeScreen extends React.Component {
             if(this.state.savedStops.length == 0) {
                 return (
                     <ScrollView style={{padding: 10}}>
-                    <TextInput
-                        style={{height: 40}}
-                        placeholder="Enter a Subway Stop"
-                        onChangeText={(text) => this.updateSelection(text)}
-                    />
-                    <Text>{"You can search for stops using the text input above. It will display matching train stops. The schedule for each stop can be seen by pressing the stop. Stops can be saved and displayed on the home screen by pressing the top right button. They can also be removed in the same way."}</Text>
+                        <TextInput
+                            style={{height: 40}}
+                            placeholder="Enter a Subway Stop"
+                            onChangeText={(text) => this.updateSelection(text)}
+                        />
+                        <Text>{instructions}</Text>
                     </ScrollView>
-
                 )
             }
             return (
@@ -120,7 +139,7 @@ class HomeScreen extends React.Component {
                         placeholder="Enter a Subway Stop"
                         onChangeText={(text) => this.updateSelection(text)}
                     />
-                    {this.state.savedStops.map((word, index) => <Button key={index} title={word} onPress={() => this.props.navigation.navigate('Details', {stop_name: word, stop_ids: this.state.dataSource[word]})}/>)}
+                    {this.state.savedStops.map((word, index) => <InfoButton key={index} index={index} word={word} nav={() => this.props.navigation.navigate('Details', {stop_name: word, stop_ids: this.state.dataSource[word]})}/>)}
                 </ScrollView>
             )
         } else {
@@ -136,13 +155,82 @@ class HomeScreen extends React.Component {
                         placeholder="Enter a Subway Stop"
                         onChangeText={(text) => this.updateSelection(text)}
                     />
-                    {arr.filter(word => new RegExp(this.state.selection, 'i').test(word)).map((word, index) => <Matches key={index} index={index} word={word} selection={this.state.selection} nav={() => this.props.navigation.navigate('Details', {stop_name: word, stop_ids: this.state.dataSource[word]})} />)}
+                    {arr.filter(word => new RegExp(this.state.selection, 'i').test(word)).map((word, index) => <InfoButton key={index} index={index} word={word} selection={this.state.selection} nav={() => this.props.navigation.navigate('Details', {stop_name: word, stop_ids: this.state.dataSource[word]})} />)}
                 </ScrollView>
             );
         }
     }
 }
 
+class ServiceScreen extends React.Component {
+
+    static navigationOptions = {
+        title: 'Service',
+    };
+
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <ScrollView style={{padding: 10}}>
+                <TrainStatus/>
+            </ScrollView>
+        )
+    }
+}
+
+class SettingsScreen extends React.Component {
+
+    static navigationOptions = {
+        title: 'Settings',
+    };
+
+    constructor(props) {
+        super(props);
+    }
+
+    deleteAllSavedStops = () => {
+        console.log("clicked")
+        AsyncStorage.clear((error) => {
+            if(error) {
+                Alert.alert(
+                    'Unable to clear',
+                    'Please try again',
+                    [
+                        {text: 'Okay', onPress: () => {}},
+                    ],
+                    { cancelable: false }
+                )
+            }
+        });
+    }
+
+    handleClick = () => {
+        Alert.alert(
+            'Warning',
+            'Are you sure you want to delete all saved stops',
+            [
+                {text: 'Yes', onPress: () => this.deleteAllSavedStops()},
+                {text: 'Cancel', onPress: () => {}, style: 'cancel'},
+            ],
+            { cancelable: false }
+        )
+    }
+
+    render() {
+        return (
+            <ScrollView style={{padding: 10}}>
+                <Text>{instructions}</Text>
+                <Button title="Delete all saved stops" onPress={() => this.handleClick()}/>
+            </ScrollView>
+        )
+    }
+}
+
+
+// Header for details screen
 class RightHeader extends React.Component {
     render() {
         getSaved = async (callback) => {
@@ -203,6 +291,7 @@ class RightHeader extends React.Component {
     }
 }
 
+// Details screen that displays train times
 class DetailsScreen extends React.Component {
 
     constructor(props) {
@@ -279,12 +368,16 @@ class DetailsScreen extends React.Component {
         clearInterval(this.state.intervalSetter)
     }
 
+    // After mounting update the screen every so often
     componentDidMount() {
         this.setState({
             isMounted: true,
             intervalSetter: setInterval(() => {
-                this.updateStopInfo()
-            }, 60000)
+                if(!this.state.isLoading) {
+                    console.log("Updating train times")
+                    this.updateStopInfo()
+                }
+            }, 25000)
         })
         this.updateStopInfo()
     }
@@ -310,6 +403,7 @@ class DetailsScreen extends React.Component {
     }
 }
 
+// Displays the arrival times for each train line
 class DirectionLists extends React.Component {
 
     constructor(props) {
@@ -400,6 +494,7 @@ class DirectionLists extends React.Component {
     }
 }
 
+// Header for the train arrival time table
 class Header extends React.Component {
     trainToColor = (train) => {
         if(train in train_color) {
@@ -418,21 +513,127 @@ class Header extends React.Component {
     }
 }
 
-class Matches extends React.Component {
+// List of subway stops buttons that lead to the train times
+class InfoButton extends React.Component {
     render() {
         if(this.props.index <= 16) {
             return (
                 <View style = {{padding: 1.5}}>
-                <Button
-                    onPress={this.props.nav}
-                    title={this.props.word}
-                    color="#841584"
-                />
+                    <Button
+                        onPress={this.props.nav}
+                        title={this.props.word}
+                        color="#841584"
+                    />
                 </View>
             )
         } else {
             return (null)
         }
+    }
+}
+
+class TrainStatus extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = { 
+            isLoading: true
+        }
+    }
+
+    componentDidMount() {
+        return fetch(mta_service_url)
+        .then((response) => response.text())
+        .then((responseJson) => {
+            var newJson = {};
+            parseString(responseJson, function (err, result) {
+                newJson = result.service.subway[0].line
+            });
+            this.setState({
+                isLoading: false,
+                status: newJson,
+            });
+        })
+        .catch((error) => {
+            console.error(error);
+        });
+    }
+
+    render() {
+        if(this.state.isLoading) {
+            return (
+                <View style={{flex: 1, padding: 80}}>
+                    <ActivityIndicator/>
+                </View>
+            )
+        } else {
+            return (
+                <View>
+                    {this.state.status.map((line, index) => <DisplayStatus key={index} name={line.name[0]} date={line.Date[0]} time={line.Time[0]} status={line.status[0]} text={line.text[0] }/>)}
+                </View>
+            )
+        }
+    }
+}
+
+class DisplayStatus extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = { showText: false }
+    }
+
+    onPress = () => {
+        this.setState({
+            showText: !(this.state.showText)
+        })
+    }
+
+    render() {
+        if(this.props.status == "GOOD SERVICE") {
+            return (
+                <View style={{flex: 0, flexDirection: 'row', flexWrap: 'wrap'}}>
+                    <View style={{width: '50%', height: 30, backgroundColor: 'lightgreen', alignItems: 'center', justifyContent: 'center'}}>
+                        <Text>{this.props.name + " - " + this.props.status}</Text>
+                    </View>
+                    <View style={{width: '50%', height: 30, backgroundColor: 'lightgreen', alignItems: 'center', justifyContent: 'center'}}>
+                        <Text>{this.props.date + " -" + this.props.time}</Text>
+                    </View>
+                </View>
+            )
+
+        } else if(this.state.showText) {
+            return (
+                <TouchableHighlight onPress={this.onPress}>
+                    <View style={{flex: 0, flexDirection: 'row', flexWrap: 'wrap'}}>
+                        <View style={{width: '50%', height: 30, backgroundColor: 'red', alignItems: 'center', justifyContent: 'center'}}>
+                            <Text>{this.props.name + " - " + this.props.status}</Text>
+                        </View>
+                        <View style={{width: '50%', height: 30, backgroundColor: 'red', alignItems: 'center', justifyContent: 'center'}}>
+                            <Text>{this.props.date + " -" + this.props.time}</Text>
+                        </View>
+                        <View style={{width: '100%', backgroundColor: 'rgba(247,247,247,1.0)', alignItems: 'center', justifyContent: 'center'}}>
+                            <HTML html={this.props.text} imagesMaxWidth={Dimensions.get('window').width} />
+                        </View>
+                    </View>
+                </TouchableHighlight>
+            )
+
+        } else {
+            return (
+                <TouchableHighlight onPress={this.onPress}>
+                    <View style={{flex: 0, flexDirection: 'row', flexWrap: 'wrap'}}>
+                        <View style={{width: '50%', height: 30, backgroundColor: 'red', alignItems: 'center', justifyContent: 'center'}}>
+                            <Text>{this.props.name + " - " + this.props.status}</Text>
+                        </View>
+                        <View style={{width: '50%', height: 30, backgroundColor: 'red', alignItems: 'center', justifyContent: 'center'}}>
+                            <Text>{this.props.date + " -" + this.props.time}</Text>
+                        </View>
+                    </View>
+                </TouchableHighlight>
+            )
+        }
+        
     }
 }
 
@@ -444,7 +645,6 @@ const styles = StyleSheet.create({
     sectionHeader: {
         paddingTop: 2,
         paddingLeft: 10,
-        paddingRight: 300,
         paddingBottom: 2,
         fontSize: 20,
         fontWeight: 'bold',
@@ -485,6 +685,12 @@ const RootStack = StackNavigator(
         },
         Details: {
             screen: DetailsScreen,
+        },
+        Service: {
+            screen: ServiceScreen,
+        },
+        Settings: {
+            screen: SettingsScreen,
         },
     },
     {
