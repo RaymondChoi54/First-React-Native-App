@@ -1,13 +1,5 @@
 [
     {
-        "merged": "/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/res/merged/debug/drawable-v21/notification_action_background.xml",
-        "source": "/Users/RaymondChoi/.android/build-cache/81d7ff8ff66dab4e44be9f24cee6a1d9555ad934/output/res/drawable-v21/notification_action_background.xml"
-    },
-    {
-        "merged": "/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
-        "source": "/Users/RaymondChoi/.android/build-cache/411fcf5caa3a8999a0f323582ee86d7a312068bd/output/res/drawable-v21/abc_btn_colored_material.xml"
-    },
-    {
         "merged": "/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml",
         "source": "/Users/RaymondChoi/.android/build-cache/411fcf5caa3a8999a0f323582ee86d7a312068bd/output/res/drawable-v21/abc_edit_text_material.xml"
     },
@@ -16,19 +8,11 @@
         "source": "/Users/RaymondChoi/.android/build-cache/411fcf5caa3a8999a0f323582ee86d7a312068bd/output/res/drawable-v21/abc_btn_colored_material.xml"
     },
     {
-        "merged": "/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml",
-        "source": "/Users/RaymondChoi/.android/build-cache/411fcf5caa3a8999a0f323582ee86d7a312068bd/output/res/drawable-v21/abc_edit_text_material.xml"
-    },
-    {
         "merged": "/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/res/merged/debug/drawable-v21/notification_action_background.xml",
         "source": "/Users/RaymondChoi/.android/build-cache/81d7ff8ff66dab4e44be9f24cee6a1d9555ad934/output/res/drawable-v21/notification_action_background.xml"
     },
     {
         "merged": "/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
-        "source": "/Users/RaymondChoi/.android/build-cache/411fcf5caa3a8999a0f323582ee86d7a312068bd/output/res/drawable-v21/abc_action_bar_item_background_material.xml"
-    },
-    {
-        "merged": "/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
         "source": "/Users/RaymondChoi/.android/build-cache/411fcf5caa3a8999a0f323582ee86d7a312068bd/output/res/drawable-v21/abc_action_bar_item_background_material.xml"
     }
 ]

@@ -63,7 +63,7 @@ class DirectionLists extends React.Component {
             downtown.sort(function(a, b) { return (a.arrival - b.arrival) });
         }
         return (
-            <View style={{flex: 1, marginBottom: 10}}>
+            <View style={{flex: 1, marginBottom: 10, backgroundColor: 'white', borderBottomWidth: 2, borderColor: 'black' }}>
                 <ArrivalHeader title={this.props.item.title} />
                 <View style={{flex: 1, flexDirection: 'row'}}>
                     <View style={styles.arrivalContainer}>
@@ -97,13 +97,11 @@ class DirectionLists extends React.Component {
 const styles = StyleSheet.create({
     arrivalContainer: {
         flex: 1,
-        backgroundColor: 'rgba(247,247,247,1.0)',
         padding: 5,
-        borderBottomWidth: 2,
-        borderColor: 'black',
     },
     direction: {
         fontSize: 18,
+        color: 'black'
     },
     centerItem: {
         flex: 1,
@@ -111,6 +109,7 @@ const styles = StyleSheet.create({
     },
     arrivalText: {
         fontSize: 18,
+        color: 'black'
     },
 })
 

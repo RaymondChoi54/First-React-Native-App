@@ -101,7 +101,7 @@ class HomeScreen extends React.Component {
             if(this.state.savedStops.length == 0) {
                 return (
                     <ScrollView style={{padding: 10}}>
-                        <View style={{ backgroundColor: 'white', borderRadius: 2 }}>
+                        <View style={{ backgroundColor: 'white', borderRadius: 2, margin: 1.5, marginTop: 0 }}>
                             <TextInput
                                 style={{height: 40, paddingLeft: 5}}
                                 placeholder="Enter a Subway Stop"
@@ -114,7 +114,7 @@ class HomeScreen extends React.Component {
             }
             return (
                 <ScrollView style={{padding: 10}}>
-                    <View style={{ backgroundColor: 'white', borderRadius: 2 }}>
+                    <View style={{ backgroundColor: 'white', borderRadius: 2,  margin: 1.5, marginTop: 0 }}>
                         <TextInput
                             style={{height: 40, paddingLeft: 5}}
                             placeholder="Enter a Subway Stop"
@@ -132,7 +132,7 @@ class HomeScreen extends React.Component {
 
             return (
                 <ScrollView style={{padding: 10}}>
-                    <View style={{ backgroundColor: 'white', borderRadius: 2 }}>
+                    <View style={{ backgroundColor: 'white', borderRadius: 2, margin: 1.5, marginTop: 0 }}>
                         <TextInput
                             style={{height: 40, paddingLeft: 5}}
                             placeholder="Enter a Subway Stop"

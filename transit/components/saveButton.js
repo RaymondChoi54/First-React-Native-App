@@ -58,7 +58,7 @@ class SaveButton extends React.Component {
         }
         return (
             <View style={{ width: 35, marginRight: 12 }}>
-                <TitleButton title={"+"} onPress={saveStop}></TitleButton>
+                <TitleButton title={"   +"} onPress={saveStop}></TitleButton>
             </View>
         )
     }

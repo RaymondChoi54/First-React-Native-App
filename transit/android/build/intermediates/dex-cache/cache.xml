@@ -12,15 +12,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.3"
-        sha1="9273cd16af44542ee292467e87ae69d3fe1ec763">
-        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_8dafbfdfde498b4c0c88ed3e63af992f0fd5206d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
@@ -54,6 +45,15 @@
         revision="26.0.3"
         sha1="9809e90be788acdb479b2b44e2112f3295a03068">
         <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/pre-dexed/debug/infer-annotations-4.0_76906266ef50993d3c72f5ce048812e3bb15d500.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="706c832f4c2aba5a31e68933f9c48d62b873571d">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_8dafbfdfde498b4c0c88ed3e63af992f0fd5206d/classes.dex" />
     </item>
 
 </items>

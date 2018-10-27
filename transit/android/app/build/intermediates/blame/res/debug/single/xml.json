@@ -1,9 +1,5 @@
 [
     {
-        "merged": "/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/res/merged/debug/xml/preferences.xml",
-        "source": "/Users/RaymondChoi/.android/build-cache/b9a1c57a3c69356fecb3f106051d99a3421bfc6a/output/res/xml/preferences.xml"
-    },
-    {
         "merged": "/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/res/merged/debug/xml/preferences.xml",
         "source": "/Users/RaymondChoi/.android/build-cache/e3dcf5f3a876376c0d05ebf0579e720e49546aeb/output/res/xml/preferences.xml"
     }

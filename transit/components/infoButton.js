@@ -6,7 +6,7 @@ class InfoButton extends React.Component {
     render() {
         if(this.props.index <= 16) {
             return (
-                <View style = {{padding: 1.5}}>
+                <View style={{padding: 1.5}}>
                     <Button
                         onPress={this.props.nav}
                         title={this.props.word}

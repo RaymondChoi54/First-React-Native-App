@@ -1,4 +1,0 @@
-#Tue Sep 18 19:10:06 EDT 2018
-base.0=/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/transforms/dex/release/folders/1000/1f/main
-renamed.0=classes.dex
-file.0=/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/transforms/dex/release/folders/1000/1f/main/classes.dex
