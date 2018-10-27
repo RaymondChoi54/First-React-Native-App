@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlatList, ActivityIndicator, Text, View, TextInput, StyleSheet, ScrollView, Button, SectionList, Alert, AsyncStorage, AppRegistry, TouchableHighlight, Dimensions } from 'react-native';
-import { StackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
 import HTML from 'react-native-render-html';
 import { YellowBox } from 'react-native';
 YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader']);
@@ -675,7 +675,7 @@ const styles = StyleSheet.create({
     },
 })
 
-const RootStack = StackNavigator(
+const RootStack = createStackNavigator(
     {
         Home: {
             screen: HomeScreen,
