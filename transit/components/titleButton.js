@@ -9,7 +9,7 @@ class TitleButton extends React.Component {
     }
     render() {
         return (
-        	<TouchableHighlight onPress={() => this.props.onPress()}>
+        	<TouchableHighlight onPress={() => this.props.onPress()} underlayColor={'white'}>
         		<Text style={{ margin: 7, fontSize: 16, color: 'blue' }}>{this.props.title}</Text>
         	</TouchableHighlight>
         )
