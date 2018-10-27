@@ -8,6 +8,7 @@ import SettingsScreen from './settingsScreen';
 import DetailsScreen from './detailsScreen';
 
 import InfoButton from '../components/infoButton';
+import TitleButton from '../components/titleButton';
 
 YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader']);
 
@@ -27,12 +28,21 @@ class HomeScreen extends React.Component {
         }
     }
 
+    // static navigationOptions = ({ navigation }) => {
+    //     const { params } = navigation.state
+    //     return {
+    //         title: params ? params.stop_name : 'Loading',
+    //         headerLeft: <Button onPress={() => navigation.navigate('Service')} title="Service"/>,
+    //         headerRight: <Button onPress={() => navigation.navigate('Settings')} title="Settings"/>
+    //     }
+    // }
+
     static navigationOptions = ({ navigation }) => {
         const { params } = navigation.state
         return {
             title: params ? params.stop_name : 'Loading',
-            headerLeft: <Button onPress={() => navigation.navigate('Service')} title="Service"/>,
-            headerRight: <Button onPress={() => navigation.navigate('Settings')} title="Settings"/>
+            headerLeft: <TitleButton onPress={() => navigation.navigate('Service')} title={'Service'}/>,
+            headerRight: <TitleButton onPress={() => navigation.navigate('Settings')} title={'Settings'}/>
         }
     }
 

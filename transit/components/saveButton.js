@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, Button, AsyncStorage, Alert } from 'react-native';
+import { View, AsyncStorage, Alert } from 'react-native';
+
+import TitleButton from '../components/titleButton';
 
 // Button to save a given stop
 class SaveButton extends React.Component {
@@ -56,7 +58,7 @@ class SaveButton extends React.Component {
         }
         return (
             <View style={{ width: 35, marginRight: 12 }}>
-                <Button title={"+"} onPress={saveStop}></Button>
+                <TitleButton title={"+"} onPress={saveStop}></TitleButton>
             </View>
         )
     }
