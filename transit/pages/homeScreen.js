@@ -28,15 +28,6 @@ class HomeScreen extends React.Component {
         }
     }
 
-    // static navigationOptions = ({ navigation }) => {
-    //     const { params } = navigation.state
-    //     return {
-    //         title: params ? params.stop_name : 'Loading',
-    //         headerLeft: <Button onPress={() => navigation.navigate('Service')} title="Service"/>,
-    //         headerRight: <Button onPress={() => navigation.navigate('Settings')} title="Settings"/>
-    //     }
-    // }
-
     static navigationOptions = ({ navigation }) => {
         const { params } = navigation.state
         return {
@@ -110,22 +101,26 @@ class HomeScreen extends React.Component {
             if(this.state.savedStops.length == 0) {
                 return (
                     <ScrollView style={{padding: 10}}>
-                        <TextInput
-                            style={{height: 40}}
-                            placeholder="Enter a Subway Stop"
-                            onChangeText={(text) => this.updateSelection(text)}
-                        />
+                        <View style={{ backgroundColor: 'white', borderRadius: 2 }}>
+                            <TextInput
+                                style={{height: 40, paddingLeft: 5}}
+                                placeholder="Enter a Subway Stop"
+                                onChangeText={(text) => this.updateSelection(text)}
+                            />
+                        </View>
                         <Text>{instructions}</Text>
                     </ScrollView>
                 )
             }
             return (
                 <ScrollView style={{padding: 10}}>
-                    <TextInput
-                        style={{height: 40}}
-                        placeholder="Enter a Subway Stop"
-                        onChangeText={(text) => this.updateSelection(text)}
-                    />
+                    <View style={{ backgroundColor: 'white', borderRadius: 2 }}>
+                        <TextInput
+                            style={{height: 40, paddingLeft: 5}}
+                            placeholder="Enter a Subway Stop"
+                            onChangeText={(text) => this.updateSelection(text)}
+                        />
+                    </View>
                     {this.state.savedStops.map((word, index) => <InfoButton key={index} index={index} word={word} nav={() => this.props.navigation.navigate('Details', {stop_name: word, stop_ids: this.state.dataSource[word]})}/>)}
                 </ScrollView>
             )
@@ -137,11 +132,13 @@ class HomeScreen extends React.Component {
 
             return (
                 <ScrollView style={{padding: 10}}>
-                    <TextInput
-                        style={{height: 40}}
-                        placeholder="Enter a Subway Stop"
-                        onChangeText={(text) => this.updateSelection(text)}
-                    />
+                    <View style={{ backgroundColor: 'white', borderRadius: 2 }}>
+                        <TextInput
+                            style={{height: 40, paddingLeft: 5}}
+                            placeholder="Enter a Subway Stop"
+                            onChangeText={(text) => this.updateSelection(text)}
+                        />
+                    </View>
                     {arr.filter(word => new RegExp(this.state.selection, 'i').test(word)).map((word, index) => <InfoButton key={index} index={index} word={word} selection={this.state.selection} nav={() => this.props.navigation.navigate('Details', {stop_name: word, stop_ids: this.state.dataSource[word]})} />)}
                 </ScrollView>
             );
