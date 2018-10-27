@@ -1,6 +1,7 @@
 # My first react native app
 
 MTA train tracking app
+
 A very simple app intended for the quick viewing of live train arrival times and service status. Commonly used stops can be saved to easily view arrival times with one click.
 
 # Home screen: Saved train stops
