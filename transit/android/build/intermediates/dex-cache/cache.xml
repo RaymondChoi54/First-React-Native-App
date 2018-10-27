@@ -2,6 +2,33 @@
 <items version="2" >
 
     <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/.android/build-cache/e3dcf5f3a876376c0d05ebf0579e720e49546aeb/output/jars/libs/infer-annotations-4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/infer-annotations-4.0_76906266ef50993d3c72f5ce048812e3bb15d500/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="9273cd16af44542ee292467e87ae69d3fe1ec763">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_8dafbfdfde498b4c0c88ed3e63af992f0fd5206d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_c92d2cdaadd99d7bd5d406ee83f41a6aadaaaa4d/classes.dex" />
+    </item>
+    <item
         is-multidex="false"
         jar="/Users/RaymondChoi/.android/build-cache/e3dcf5f3a876376c0d05ebf0579e720e49546aeb/output/jars/classes.jar"
         jumboMode="false"
@@ -9,6 +36,15 @@
         revision="26.0.3"
         sha1="e7a850c25a7efbd533c496ab482c980fdafac58d">
         <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/pre-dexed/debug/classes_d1910d1c5e208170739e979f7e0c639b74053cbc.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RaymondChoi/.android/build-cache/e3dcf5f3a876376c0d05ebf0579e720e49546aeb/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.3"
+        sha1="e7a850c25a7efbd533c496ab482c980fdafac58d">
+        <dex dex="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d1910d1c5e208170739e979f7e0c639b74053cbc/classes.dex" />
     </item>
     <item
         is-multidex="false"

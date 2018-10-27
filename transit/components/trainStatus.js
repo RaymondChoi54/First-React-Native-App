@@ -66,12 +66,12 @@ class DisplayStatus extends React.Component {
     render() {
         if(this.props.status == "GOOD SERVICE") {
             return (
-                <View style={{flex: 0, flexDirection: 'row', flexWrap: 'wrap'}}>
-                    <View style={{width: '50%', height: 30, backgroundColor: 'lightgreen', alignItems: 'center', justifyContent: 'center'}}>
+                <View style={{flex: 0, flexDirection: 'row', flexWrap: 'wrap', backgroundColor: 'lightgreen'}}>
+                    <View style={{width: '50%', height: 30, alignItems: 'center', justifyContent: 'center'}}>
                         <Text>{this.props.name + " - " + this.props.status}</Text>
                     </View>
-                    <View style={{width: '50%', height: 30, backgroundColor: 'lightgreen', alignItems: 'center', justifyContent: 'center'}}>
-                        <Text>{this.props.date + " -" + this.props.time}</Text>
+                    <View style={{width: '50%', height: 30, alignItems: 'center', justifyContent: 'center'}}>
+                        <Text>{this.props.date + " - " + this.props.time}</Text>
                     </View>
                 </View>
             )
@@ -79,12 +79,12 @@ class DisplayStatus extends React.Component {
         } else if(this.state.showText) {
             return (
                 <TouchableHighlight onPress={this.onPress}>
-                    <View style={{flex: 0, flexDirection: 'row', flexWrap: 'wrap'}}>
-                        <View style={{width: '50%', height: 30, backgroundColor: 'red', alignItems: 'center', justifyContent: 'center'}}>
+                    <View style={{flex: 0, flexDirection: 'row', flexWrap: 'wrap', backgroundColor: 'red'}}>
+                        <View style={{width: '50%', height: 30, alignItems: 'center', justifyContent: 'center'}}>
                             <Text>{this.props.name + " - " + this.props.status}</Text>
                         </View>
-                        <View style={{width: '50%', height: 30, backgroundColor: 'red', alignItems: 'center', justifyContent: 'center'}}>
-                            <Text>{this.props.date + " -" + this.props.time}</Text>
+                        <View style={{width: '50%', height: 30, alignItems: 'center', justifyContent: 'center'}}>
+                            <Text>{this.props.date + " - " + this.props.time}</Text>
                         </View>
                         <View style={{width: '100%', backgroundColor: 'rgba(247,247,247,1.0)', alignItems: 'center', justifyContent: 'center'}}>
                             <HTML html={this.props.text} />
@@ -96,12 +96,12 @@ class DisplayStatus extends React.Component {
         } else {
             return (
                 <TouchableHighlight onPress={this.onPress}>
-                    <View style={{flex: 0, flexDirection: 'row', flexWrap: 'wrap'}}>
-                        <View style={{width: '50%', height: 30, backgroundColor: 'red', alignItems: 'center', justifyContent: 'center'}}>
+                    <View style={{flex: 0, flexDirection: 'row', flexWrap: 'wrap', backgroundColor: 'red'}}>
+                        <View style={{width: '50%', height: 30, alignItems: 'center', justifyContent: 'center'}}>
                             <Text>{this.props.name + " - " + this.props.status}</Text>
                         </View>
-                        <View style={{width: '50%', height: 30, backgroundColor: 'red', alignItems: 'center', justifyContent: 'center'}}>
-                            <Text>{this.props.date + " -" + this.props.time}</Text>
+                        <View style={{width: '50%', height: 30, alignItems: 'center', justifyContent: 'center'}}>
+                            <Text>{this.props.date + " - " + this.props.time}</Text>
                         </View>
                     </View>
                 </TouchableHighlight>

@@ -160,6 +160,7 @@ const RootStack = createStackNavigator(
     },
     {
         initialRouteName: 'Home',
+        headerLayoutPreset: 'center',
     }
 );
 

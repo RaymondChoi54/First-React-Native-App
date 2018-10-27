@@ -6,7 +6,7 @@
     density="420dpi"
     format="10"
     plugin-version="2.3.3"
-    timestamp="1537310897631"
+    timestamp="1540609597561"
     token="-1483787550040630968"
     verifier="FULL_BUILD_REQUESTED" >
 
@@ -18,17 +18,47 @@
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="2237" />
     <task
         name="verifier"
-        duration="0" />
+        duration="1316" />
 
     <artifact
-        location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+        location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
         type="SPLIT" />
     <artifact
-        location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+        location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
         type="SPLIT" />
+    <artifact
+        location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/outputs/apk/app-debug.apk"
+        type="SPLIT_MAIN" />
     <artifact
         location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
         type="SPLIT" />
@@ -36,10 +66,22 @@
         location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
         type="SPLIT" />
     <artifact
-        location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
+        location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
         type="SPLIT" />
     <artifact
-        location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+        location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
         type="SPLIT" />
     <artifact
         location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
@@ -50,26 +92,47 @@
     <artifact
         location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
         type="SPLIT" />
-    <artifact
-        location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
-        type="SPLIT" />
-    <artifact
-        location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
-        type="SPLIT" />
-    <artifact
-        location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/outputs/apk/app-debug.apk"
-        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1537310897631"
+        timestamp="1540609597561"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+            location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+            location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
             type="SPLIT" />
+        <artifact
+            location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/transit/android/app/build/outputs/apk/app-debug.apk"
+            type="SPLIT_MAIN" />
         <artifact
             location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
             type="SPLIT" />
@@ -77,10 +140,22 @@
             location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
+            location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+            location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
             type="SPLIT" />
         <artifact
             location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
@@ -91,15 +166,6 @@
         <artifact
             location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
             type="SPLIT" />
-        <artifact
-            location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/RaymondChoi/Documents/GitHub/First-React-Native-App/AwesomeTime3/android/app/build/outputs/apk/app-debug.apk"
-            type="SPLIT_MAIN" />
     </build>
 
 </instant-run>
